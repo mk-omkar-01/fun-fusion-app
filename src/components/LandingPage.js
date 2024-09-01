@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
 import card1 from './images/xox.jpg'; // Adjust the path based on your file structure
-import card2 from './images/quiz.avif';
+import card2 from './images/quiz.jpg';
 import card3 from './location.jpg';
 import card4 from '../images/movie.jpg';
-import card5 from './images/puzzle.webp';
+import card5 from './images/puzzle.jpg';
 import card6 from './images/word.png';
 import card7 from './images/memory.jpg'; // Placeholder image for Coming Soon cards
 
