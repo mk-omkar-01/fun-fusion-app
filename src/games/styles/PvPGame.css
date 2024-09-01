@@ -1,0 +1,138 @@
+/* PvPGame.css */
+
+/* Background for the entire game */
+.pvp-background {
+  background-image: url('https://t4.ftcdn.net/jpg/04/42/37/53/360_F_442375349_Z2mv3ZZNkKgsDgY1FOCdHeo8KXDop3iy.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.setup {
+  text-align: center;
+}
+
+.game-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  margin-left: 30px; /* Adjust this value to move the heading to the right */
+}
+
+.player-inputs input {
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #474747;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button.active {
+  background-color: #28a745; /* Green color for active state */
+}
+
+button:hover {
+  background-color: #666;
+}
+
+.game-status {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.winner-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winner-message {
+  margin-bottom: 20px;
+}
+
+.trophy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trophy-img {
+  width: 250px;
+  height: auto;
+}
+
+.restart-button.active, .replay-button.active {
+  background-color: #28a745; /* Green color for active state */
+}
+
+.restart-button, .replay-button {
+  background-color: #474747;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.restart-button:hover, .replay-button:hover {
+  background-color: #666;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 0; /* Remove gaps between squares */
+  margin: 20px auto;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  font-size: 36px;
+  border: 2px solid #333;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensure border is included in the element's total width and height */
+}
+
+.square:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.square.X {
+  color: red; /* X color */
+}
+
+.square.O {
+  color: blue; /* O color */
+}
+
+.game-status-message {
+  text-align: center;
+}
+
+.draw-replay {
+  margin-top: 20px;
+}
