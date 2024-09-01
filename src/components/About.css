@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212; /* Dark background for better contrast */
+    color: #ffffff; /* Light text color for readability */
+}
+
+/* About Container */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading */
+.about-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f0a500; /* Bright color for the heading */
+}
+
+/* About Text */
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0; /* Slightly lighter color for text */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Student List */
+.student-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Student Card */
+.student-card {
+    background-color: #1e1e1e; /* Darker card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.student-card h2 {
+    font-size: 1.5rem;
+    color: #f0a500; /* Consistent bright color for names */
+    margin-bottom: 10px;
+}
+
+.student-card p {
+    font-size: 1.1rem;
+    color: #b3b3b3; /* Lighter color for secondary text */
+}
+
+/* Responsive Design for Tablets and Desktops */
+@media (min-width: 768px) {
+    .student-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-container h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Responsive Design for Desktops */
+@media (min-width: 992px) {
+    .student-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .about-container h1 {
+        font-size: 3.5rem;
+    }
+}
