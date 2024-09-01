@@ -4,11 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center; /* Centers content vertically */
-  font-family: 'Arial', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   padding: 20px;
   width: 800px;
   margin: auto;
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 600px; /* Ensure the container takes up the full viewport height */
@@ -107,7 +107,7 @@ h1 {
 }
 
 .guess-button:hover {
-  background-color: #0a7a53;
+  background-color: #0056b3;
   transform: scale(1.05);
 }
 
@@ -144,6 +144,7 @@ h1 {
   color: #fffbfb;
   text-align: center;
 }
+
 /* Serial number styling */
 .serial-number {
   font-size: 1.5rem;
@@ -151,6 +152,8 @@ h1 {
   margin-bottom: 10px;
   color: #fff;
 }
+
+/* Background image container */
 .location-container {
   background-image: url('https://wallpapers.com/images/hd/most-beautiful-places-in-the-world-ixted75dnonldfh8.jpg');
   background-size: cover;
@@ -165,6 +168,8 @@ h1 {
   padding: 20px;
   box-sizing: border-box;
 }
+
+/* Content styling */
 .game-content {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -174,9 +179,85 @@ h1 {
   max-width: 800px;
   text-align: center;
 }
+
+/* Heading styling */
 .heading {
   color: white; /* Sets the text color to white */
   text-align: center; /* Centers the text horizontally */
   font-size: 24px; /* Optional: Adjust the font size as needed */
   margin: 20px 0; /* Optional: Adds some space above and below the heading */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .guess-container {
+    width: 90%;
+    height: auto; /* Adjust height for smaller screens */
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2rem; /* Smaller font size for headings */
+  }
+
+  .location-image-container {
+    width: 90%;
+    height: 200px; /* Adjusted for smaller screens */
+  }
+
+  .guess-form {
+    grid-template-columns: 1fr; /* Stack form fields on small screens */
+  }
+
+  .start-button,
+  .guess-button,
+  .replay-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .score-container p,
+  .message,
+  .loading,
+  .serial-number {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guess-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller font size for very small screens */
+  }
+
+  .location-image-container {
+    width: 100%;
+    height: 150px; /* Further adjustment for very small screens */
+  }
+
+  .start-button,
+  .guess-button,
+  .replay-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .score-container p,
+  .message,
+  .loading,
+  .serial-number {
+    font-size: 0.9rem; /* Smaller font size for very small screens */
+  }
+
+  .heading {
+    font-size: 18px;
+  }
 }
