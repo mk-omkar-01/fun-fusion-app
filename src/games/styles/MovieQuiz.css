@@ -1,0 +1,140 @@
+.movie-background {
+  background-image: url("./bg-movie.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+}
+
+.quiz-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #000; /* Text color inside the container */
+}
+
+.quiz-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px 0;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.emoji-display {
+  font-size: 3em;
+  margin: 20px 0;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 20px; /* Space between options */
+  width: 100%; /* Ensure the form takes full width */
+  
+}
+.option {
+  display: flex;
+  align-items: center; /* Align radio buttons and text vertically */
+  font-size: 1.2em;
+  color: #000; /* Set text color to black for visibility */
+}
+input[type="radio"] {
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent radio button from shrinking */
+}
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+
+  /* Center horizontally */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.feedback {
+  font-size: 1.2em;
+  color: #ff0000;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.question-count {
+  font-size: 1em;
+  color: #000000;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.final-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center-align text in final score section */
+}
+
+.final-score h2 {
+  font-size: 2em;
+  color: #000000;
+}
+
+.final-score p {
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+.final-score button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.final-score button:hover {
+  background-color: #218838;
+}
+.submit {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+
+  /* Centering the button */
+  display: block;
+  margin-left: 90%;
+  margin-right: auto;
+  text-align: center;
+}
