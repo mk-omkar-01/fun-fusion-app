@@ -4,6 +4,9 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import './styles/Location.css';
 import startImage from '../components/location.jpg';  // Import your local image
 
+const handleImageError = (e) => {
+  e.target.src = 'path/to/fallback-image.jpg'; // Fallback image URL
+};
 const locations = [
   // Karnataka Locations
   { name: 'Mysore Palace', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAjPXJa5LD3IhnOKG_rA2HTZzYUUZLmHTSw&s', options: ['Mysore Palace', 'Hampi', 'Badami', 'Chitradurga Fort', 'Bangalore Palace'] },
@@ -136,10 +139,10 @@ const GuessTheLocation = () => {
   if (!gameStarted) {
     return (
       <div className='location-container'>
-      <div className="guess-container">
-        <h1 className="heading">Guess the Location</h1>
-        <img src={startImage} alt="Start Game" className="start-image" /><br/>
-        <button onClick={handleStart} className="start-button">Start Game</button>
+        <div className="guess-container">
+          <h1 className="heading">Guess the Location</h1>
+          <img src={startImage} alt="Start Game" className="start-image" /><br/>
+          <button onClick={handleStart} className="start-button">Start Game</button>
         </div>
       </div>
     );
@@ -151,45 +154,46 @@ const GuessTheLocation = () => {
   const serialNumber = currentQuestionIndex + 1;
 
   return (
-  <div className='location-container'>
-    <div className="guess-container">
-      <h1 className="heading">Guess the Location</h1>
-      {!showSubmit && (
-        <>
-          <div className="location-image-container">
-            <LazyLoadImage
-              src={currentQuestion.image}
-              alt="Location"
-              className="location-image"
-              effect="blur"
-              loading="lazy"
-            />
+    <div className='location-container'>
+      <div className="guess-container">
+        <h1 className="heading">Guess the Location</h1>
+        {!showSubmit && (
+          <>
+            <div className="location-image-container">
+              <LazyLoadImage
+                src={currentQuestion.image}
+                alt="Location"
+                className="location-image"
+                effect="blur"
+                loading="lazy"
+                onError={handleImageError}
+              />
+            </div>
+            <div className="question-container">
+              <p className="serial-number">Question {serialNumber}:</p>
+              <form className="guess-form">
+                {currentQuestion.options.map((option, index) => (
+                  <GuessOption
+                    key={index}
+                    option={option}
+                    index={index}
+                    selectedOption={selectedOption}
+                    onChange={handleOptionChange}
+                  />
+                ))}
+              </form>
+              <button onClick={handleSubmit} className="guess-button">Submit</button>
+              {message && <p className="message">{message}</p>}
+            </div>
+          </>
+        )}
+        {showSubmit && (
+          <div className="score-container">
+            <p className="score-message">Your final score is {score} out of {questions.length}.</p>
+            <button onClick={handleReplay} className="replay-button">Replay</button>
           </div>
-          <div className="question-container">
-            <p className="serial-number">Question {serialNumber}:</p>
-            <form className="guess-form">
-              {currentQuestion.options.map((option, index) => (
-                <GuessOption
-                  key={index}
-                  option={option}
-                  index={index}
-                  selectedOption={selectedOption}
-                  onChange={handleOptionChange}
-                />
-              ))}
-            </form>
-            <button onClick={handleSubmit} className="guess-button">Submit</button>
-            {message && <p className="message">{message}</p>}
-          </div>
-        </>
-      )}
-      {showSubmit && (
-        <div className="score-container">
-          <p className="score-message">Your final score is {score} out of {questions.length}.</p>
-          <button onClick={handleReplay} className="replay-button">Replay</button>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </div>
   );
 };

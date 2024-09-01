@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Quiz from './games/Quiz';
 import LandingPage from './components/LandingPage';
 import PvPGame from './games/PvPGame';

@@ -22,6 +22,7 @@
   font-size: 48px;
   margin-bottom: 20px;
   margin-left: 30px; /* Adjust this value to move the heading to the right */
+  color: #ddd;
 }
 
 .player-inputs input {

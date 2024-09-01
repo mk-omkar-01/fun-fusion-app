@@ -7,14 +7,26 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const navItems = [
   { name: 'Home', path: '/' },
-  { name: 'About_Us', path: '/about' },
+  { name: 'About Us', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
 
 function Navbar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -25,6 +37,7 @@ function Navbar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2, display: { sm: 'none' } }}
+            onClick={handleMenuOpen}
           >
             <MenuIcon />
           </IconButton>
@@ -43,6 +56,23 @@ function Navbar() {
               </Button>
             ))}
           </Box>
+          {/* Mobile menu */}
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            {navItems.map((item) => (
+              <MenuItem
+                key={item.name}
+                component={Link}
+                to={item.path}
+                onClick={handleMenuClose}
+              >
+                {item.name}
+              </MenuItem>
+            ))}
+          </Menu>
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,3 +1,13 @@
+/* General Styles */
+body {
+    background-color: #9a8c8c;
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grid Container */
 .grid-container {
     display: flex;
     flex-direction: row;
@@ -7,10 +17,7 @@
     margin-top: 20px;
 }
 
-body {
-    background-color: #9a8c8c;
-}
-
+/* Card Styles */
 .card {
     display: flex;
     flex-direction: column;
@@ -23,30 +30,45 @@ body {
     border: 2px solid #ddd;
     margin-top: 20px;
     position: relative;
+    min-height: 400px; /* Minimum height to ensure space for content */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Card Image */
 .card-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    margin-bottom: 0; /* Removed bottom margin from the image */
 }
 
+/* Card Info Section */
 .card-info {
     padding: 10px;
     text-align: center;
+    flex-grow: 1; /* Allow info section to grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
 }
 
+/* Game Name */
 .game-name {
     font-size: 18px;
     font-weight: bold;
-    margin: 10px 0;
+    margin:0px; /* Removed top margin from the heading */
+    color: #333;
 }
 
+/* Game Description */
 .game-description {
     font-size: 14px;
-    color: #666;
+    color: #444; /* Improved contrast for better visibility */
+    margin-bottom: 40px; /* Increased bottom margin to push content above the button */
 }
 
+/* Button Styles */
 .play-button,
 .coming-soon-button {
     display: block;
@@ -62,6 +84,7 @@ body {
     border-radius: 0 0 10px 10px;
     position: absolute;
     bottom: 0;
+    padding-bottom: 20px;
 }
 
 .play-button:hover {
@@ -75,4 +98,37 @@ body {
 
 .coming-soon-button:hover {
     background-color: #6c757d; /* No hover effect for Coming Soon */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        min-height: auto; /* Remove min-height constraint on small screens */
+    }
+
+    .game-name {
+        font-size: 16px;
+    }
+
+    .game-description {
+        font-size: 12px;
+        margin-bottom: 60px; /* Increased margin on small screens */
+    }
+}
+
+/* Adjust Margin for Larger Screens */
+@media (min-width: 992px) {
+    .card-info {
+        padding:5px; /* Increase padding to reduce space around text */
+    }
+
+    .game-name {
+        margin-top: 10px; /* Reduce margin from the top for larger screens */
+    }
+
+    .game-description {
+        font-size: 16px; /* Adjust font size for larger screens */
+        margin-bottom: 30px; /* Reduce bottom margin on larger screens */
+    }
 }

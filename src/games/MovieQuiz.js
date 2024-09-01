@@ -52,7 +52,7 @@ function MovieQuiz() {
   const [score, setScore] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
   const [unaskedQuestions, setUnaskedQuestions] = useState(movies);
-
+  
   useEffect(() => {
     if (isStarted) {
       startNewQuestion();
