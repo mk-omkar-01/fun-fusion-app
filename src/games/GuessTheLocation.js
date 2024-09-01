@@ -27,6 +27,7 @@ const locations = [
   { name: 'Lotus Temple', image: 'https://chardhambooking.com/wp-content/uploads/2021/01/Lotus-Tmple-Photo-by-Arpan-Das.jpg', options: ['India Gate', 'Rashtrapati Bhavan', 'Jantar Mantar', 'Lotus Temple', 'Humayun’s Tomb'] },
   { name: 'Humayun’s Tomb', image: 'https://www.drishtiias.com/images/uploads/1623837962_image2.png  ', options: ['India Gate', 'Rashtrapati Bhavan', 'Jantar Mantar', 'Lotus Temple', 'Humayun’s Tomb'] },
 
+  
   // Global Locations
   { name: 'Eiffel Tower', image: 'https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg', options: ['Eiffel Tower', 'Great Wall of China', 'Statue of Liberty'] },
   { name: 'Great Wall of China', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg', options: ['Eiffel Tower', 'Great Wall of China', 'Statue of Liberty'] },
