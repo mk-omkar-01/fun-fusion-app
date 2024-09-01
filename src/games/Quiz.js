@@ -5,10 +5,10 @@ const getRandomQuestions = (allQuestions, numQuestions) => {
     const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, numQuestions);
 };
-
 const shuffleChoices = (choices) => {
     return [...choices].sort(() => 0.5 - Math.random());
 };
+
 
 const allQuestions = [
     // Meme Questions
@@ -62,6 +62,7 @@ const allQuestions = [
     { question: "What is the official language of India?", choices: shuffleChoices(["Hindi", "English", "Bengali", "Telugu"]), answer: "Hindi" },
     { question: "Which Indian leader is known for his role in the Indian independence movement and his philosophy of non-violence?", choices: shuffleChoices(["Mahatma Gandhi", "Jawaharlal Nehru", "Bhagat Singh", "Subhas Chandra Bose"]), answer: "Mahatma Gandhi" }
 ];
+
 const Quiz = () => {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -82,7 +83,6 @@ const Quiz = () => {
         if (selectedOption === questions[currentQuestionIndex].answer) {
             setScore(score + 1);
         }
-
         const nextQuestionIndex = currentQuestionIndex + 1;
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
@@ -90,6 +90,14 @@ const Quiz = () => {
         } else {
             setShowScore(true);
         }
+    };
+
+    const handleReplay = () => {
+        setQuestions(getRandomQuestions(allQuestions, 10));
+        setCurrentQuestionIndex(0);
+        setSelectedOption(null);
+        setScore(0);
+        setShowScore(false);
     };
 
     if (questions.length === 0) {
@@ -103,34 +111,31 @@ const Quiz = () => {
             <div className="quiz-container">
                 {showScore ? (
                     <>
-                        <h1 className="quiz-title">Quiz</h1> {/* Heading remains unchanged */}
-                        <h1 className="quiz-score">Your score is {score} out of {questions.length}</h1>
+                        <h1 className="quiz-title">Quiz Complete</h1>
+                        <h2 className="quiz-score">Your score is {score} out of {questions.length}</h2>
+                        <button className="replay-button" onClick={handleReplay}>Replay</button>
                     </>
                 ) : (
                     <>
                         <h1 className="quiz-title">Quiz</h1>
-                        <div className="parent-container">
-                            <div className="quiz-question-container">
-                                <h2 className="quiz-question">
-                                    {`${currentQuestionIndex + 1}. ${currentQuestion.question}`}
-                                </h2>
-                                <div className="quiz-options">
-                                    {currentQuestion.choices.map((option, index) => (
-                                        <div
-                                            key={index}
-                                            className={`quiz-option ${selectedOption === option ? 'selected' : ''}`}
-                                            onClick={() => handleOptionClick(option)}
-                                        >
-                                            {option}
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="quiz-controls">
-                                    <button className="next-button" onClick={handleNextQuestion} disabled={!selectedOption}>
-                                        Next Question
-                                    </button>
-                                </div>
+                        <div className="quiz-question-container">
+                            <h2 className="quiz-question">
+                                {`${currentQuestionIndex + 1}. ${currentQuestion.question}`}
+                            </h2>
+                            <div className="quiz-options">
+                                {currentQuestion.choices.map((option, index) => (
+                                    <div
+                                        key={index}
+                                        className={`quiz-option ${selectedOption === option ? 'selected' : ''}`}
+                                        onClick={() => handleOptionClick(option)}
+                                    >
+                                        {option}
+                                    </div>
+                                ))}
                             </div>
+                            <button className="next-button" onClick={handleNextQuestion} disabled={!selectedOption}>
+                                Next Question
+                            </button>
                         </div>
                     </>
                 )}
